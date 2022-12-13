@@ -11,9 +11,6 @@ const HOST = "0.0.0.0";
 // App
 const app = express();
 app.use(express.json()); // for parsing application/json
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
 app.get("/route", async (req, res) => {
   const result = await route.get(req);
   res.send(result);
