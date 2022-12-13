@@ -47,7 +47,12 @@ const traverse = async (
       );
     })
   );
-  return traversals.find((traversal) => traversal);
+  const shortestRoute = traversals.reduce((shortest, current) =>
+    current && (!shortest || current.length > shortest.length)
+      ? shortest
+      : shortest
+  );
+  return shortestRoute;
 };
 
 const get = async (req: Request) => {
