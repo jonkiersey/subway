@@ -9,6 +9,7 @@
 Compile the typescript, build the docker image, start the docker containers from the image
 
 ```
+npm i
 npx tsc
 docker-compose build
 docker-compose up -d
