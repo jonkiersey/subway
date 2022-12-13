@@ -6,7 +6,7 @@
 
 ## Running the app
 
-Compile the typescript, build the docker image, start the docker containers from the image
+Install from the package file, compile the typescript, build the docker image, start the docker containers from the image.
 
 ```
 npm i
@@ -15,7 +15,9 @@ docker-compose build
 docker-compose up -d
 ```
 
-The service can now be reached at localhost:8080/
+
+
+After the service has spun up (~5 seconds on my machine), it can now be reached at localhost:8080/
 
 Example requests:
 
