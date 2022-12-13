@@ -11,6 +11,18 @@ datasource db {
 }
 
 model TrainLine {
-  name String @id
-  line String
+  name        String       @id
+  connections Connection[]
+}
+
+model Station {
+  name        String       @id
+  connections Connection[]
+}
+
+model Connection {
+  id            Int       @id @default(autoincrement())
+  stations      Station[]
+  trainlineName String
+  trainline     TrainLine @relation(fields: [trainlineName], references: [name])
 }

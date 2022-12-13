@@ -1,14 +1,25 @@
 version: "3.9"
 services:
   web:
+    container_name: web
     build: .
     ports:
       - "8080:8080"
+    env_file:
+      - .env
+    depends_on:
+      - db
   db:
+    container_name: db
     image: postgres
     restart: always
     environment:
       POSTGRES_PASSWORD: pgpw
-      POSTGRES_DB: subway-postgres
+      POSTGRES_DB: subway
     ports:
       - "5432:5432"
+    volumes:
+      - postgres:/var/lib/postgresql/data
+volumes:
+  postgres:
+    name: subway-db
